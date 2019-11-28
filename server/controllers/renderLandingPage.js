@@ -74,10 +74,7 @@ const getPlantData = rows => {
             }
             return acc;
         }, []);
-        values.forEach(value => {
-            if (value.position === 'R5') {
-            }
-        })
+
         return values;
     } catch (err) {
         console.log('getPlantData error', err);
