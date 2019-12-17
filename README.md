@@ -1,29 +1,66 @@
-TODO
 
-Tidy up
-- readme
+Andrew's Garden
+==========
+A UI for plotting garden plant info on a planting grid and storing that data in a google sheet.
+
+Table of Contents
+-----------------
+
+ - [Why](#why-does-this-exist)
+ - [Requirements](#requirements)
+ - [Usage](#usage)
+ - [Development](#Development)
+ - [Things still to do](#things-still-to-do)
+
+Why does this exist
+------------
+Christmas present for my husband 2019!
+
+Requirements
+------------
+
+To create a smiliar UI from your own data you will need:
+ - a Google sheet containing your data. Mine has the following headings - 
+    - POSITION [required]
+    - LATIN NAME
+    - COMMON NAME
+    - PERENNIAL ANNUAL
+    - PLANTED DATE
+    - COLOUR
+    - IMAGE
+    - LINK
+    - NOTES
+    - FILLED [required]
+ - A google project connected to your sheet (I used [this very helpful Twilio tutorial](https://www.youtube.com/watch?v=UGN6EUi4Yio) )
+ - Your google project credentials saved as environment variables
+
+Usage
+-----
+via the browser: https://www.andrewsgarden.co.uk
+
+Development
+-----
+
+To run locally:
+
+ - Clone the repo to your machine
+ - Do $ `npm install`
+ - Create a .env file with your google config variables
+- Update `renderLandingPage.js` to point to your google sheet: `new GoogleSpreadsheet('[MY_SHEET_ID]')`
+- run locally with `$ nodemon app.js`
+
+Things still to do
+---------------------
+
+- update back end to be more like dads db - esp init func
 - From - Actually fill notes section with notes
 - Password for edit mode?
 - add older gallery
 - get off hobby Dyno
-- responsive gallery
+- improve responsive gallery
+- linting
 
-SpreadsheetRow
-Represents a single row from a sheet.
-
-These are returned from calling GoogleSpreadsheet.getRows and SpreadsheetWorksheet.getRows.
-
-You can treat the row as a normal javascript object. Object keys will be from the header row of your sheet, however the google API mangles the names a bit to make them simpler. It's easiest if you just use all lowercase keys to begin with.
-
-See limitations above for notes about Google's row-based API!
-
-SpreadsheetRow.save( callback )
-Saves any changes made to the row's values.
-
-SpreadsheetRow.del( callback )
-Deletes the row from the sheet.
-
-Warnings that might need dealing with: 
+**Warnings that might need dealing with:**
 
 A cookie associated with a cross-site resource at http://rhs.org.uk/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.
 
