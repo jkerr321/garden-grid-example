@@ -7,9 +7,9 @@ const renderLandingPage = require('./server/controllers/renderLandingPage');
 const colours = require('./server/colours');
 
 app.engine('html', exphbs({
-    defaultLayout: 'main',
-    extname: '.html',
-    layoutsDir: 'views/layouts/'
+	defaultLayout: 'main',
+	extname: '.html',
+	layoutsDir: 'views/layouts/'
 }));
 
 app.set('view engine', 'html');
@@ -26,5 +26,5 @@ app.get('/gallery', (req, res) => res.render('gallery'));
 app.get('/colours', (req, res) => res.render('colours', { colours }));
 
 app.listen(process.env.PORT || 8001, () => {
-    console.log('andrews-garden: listening on port 8001');
+	console.log('andrews-garden: listening on port 8001');
 });
