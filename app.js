@@ -22,7 +22,6 @@ app.get('/summer19', (req, res) => renderLandingPage(req, res, 'Summer 2019'));
 app.post('/summer19', (req, res) => renderLandingPage(req, res, 'Summer 2019'));
 app.get('/winter20', (req, res) => renderLandingPage(req, res, 'Winter 2020'));
 app.post('/winter20', (req, res) => renderLandingPage(req, res, 'Winter 2020'));
-app.get('/gallery', (req, res) => res.render('gallery'));
 app.get('/colours', (req, res) => res.render('colours', { colours }));
 
 app.listen(process.env.PORT || 8001, () => {

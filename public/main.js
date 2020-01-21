@@ -181,21 +181,3 @@ if (document.querySelector('.js-modal')) {
 	toggleButton.addEventListener('click', toggleView);
 	formColour.addEventListener('change', changeFormColour);
 }
-
-// Photo modal functionality for gallery page
-if (document.querySelector('.js-photo-modal')) {
-	const photoModal = document.querySelector('.js-photo-modal');
-	const modalContent = document.querySelector('.js-photo-modal-content');
-	const photos = Array.from(document.querySelector('.js-gallery-container').querySelectorAll('.photo'));
-	const close = photoModal.querySelector('.js-close');
-
-	photos.forEach(photo => photo.addEventListener('click', (e) => {
-		photoModal.classList.remove('hidden');
-		modalContent.src = e.srcElement.src;
-	}));
-
-	// close modal when anywhere on screen is clicked apart from the image itself
-	close.addEventListener('click', () => photoModal.classList.add('hidden'));
-	photoModal.addEventListener('click', () => photoModal.classList.add('hidden'));
-	modalContent.addEventListener('click', (e) => e.stopPropagation());
-}
