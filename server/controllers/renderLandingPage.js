@@ -7,7 +7,7 @@ const colours = require('../colours');
 
 const getRows = async (season) => {
 	try {
-		const doc = new GoogleSpreadsheet('1Khj2u55fpyr7pjKxJKu8HQzmj6UD5x2fTAxpsme0wcM');
+		const doc = new GoogleSpreadsheet('1lpw73esbiAlHBgUr41wL1RKceqYQz1M5Mj7jgVugPq0');
 		await promisify(doc.useServiceAccountAuth)(config);
 		const info = await promisify(doc.getInfo)();
 
